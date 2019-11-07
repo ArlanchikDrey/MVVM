@@ -1,13 +1,21 @@
 package com.arlanov.mvvm.ui.home
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.SavedStateHandle
 
-class HomeViewModel : ViewModel() {
+import com.arlanov.mvvm.viewmodels.home.model.User
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
-    }
-    val text: LiveData<String> = _text
+/**
+ * класс отвечающий за приготовление данных для отображения их в HomeFragment
+ * и реагирует на взаимодействие с пользователем.
+ *
+ * SavedStateHandle в аргументе позволяет ViewModel получить доступ к сохраненному состоянию
+ * и аргументам связанного фрагмента или действия.*/
+
+class HomeViewModel(
+    savedStateHanle: SavedStateHandle
+) : ViewModel() {
+
+    val userId : String = savedStateHanle["uid"] ?: throw IllegalArgumentException("missing user id")
+    val user : User = TODO()
 }

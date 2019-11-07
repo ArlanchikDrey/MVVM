@@ -9,7 +9,11 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.arlanov.mvvm.R
+import com.arlanov.mvvm.ui.dashboard.DashboardViewModel
+import kotlinx.android.synthetic.main.fragment_dashboard.*
 
+/**
+ * класс служит контроллером пользовательского интерфейса, который отвечает за отображение информации пользователю.*/
 class DashboardFragment : Fragment() {
 
     private lateinit var dashboardViewModel: DashboardViewModel
@@ -22,9 +26,8 @@ class DashboardFragment : Fragment() {
         dashboardViewModel =
             ViewModelProviders.of(this).get(DashboardViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
-        val textView: TextView = root.findViewById(R.id.text_dashboard)
         dashboardViewModel.text.observe(this, Observer {
-            textView.text = it
+            text_dashboard.text = it
         })
         return root
     }
