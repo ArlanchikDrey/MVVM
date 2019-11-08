@@ -51,7 +51,8 @@ dependencies {
 
     //Lifecycle
     implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
-    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:1.0.0-rc01"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:1.0.0-alpha01"
+
     //Tests
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
