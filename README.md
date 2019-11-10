@@ -1,1 +1,1 @@
-# This is my example MVVM
+# This is example MVVM
